@@ -18,7 +18,8 @@ Python3 must be already installed
 git clone https://github.com/AlexBOVUKR/taxi-website
 cd taxi-website
 python3 -m venv venv
-source venv/bin/activate
+source venv/bin/activate(Mac)
+source venv/Scripts/activate(Windows)
 pip install -r requirements.txt
 python manage.py runserver #starts Django server
 ```

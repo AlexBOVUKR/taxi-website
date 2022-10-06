@@ -15,16 +15,34 @@
   </form>
 
   {% if car_list %}
-    <ul>
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Manufacturer</th>
+        <th>Model</th>
+        <th>Country</th>
+      </tr>
+
       {% for car in car_list %}
-        <li>
-          <a href="{% url "taxi:car-detail" pk=car.id %} ">{{ car.id }} {{ car.model }}</a>
-          ({{ car.manufacturer.name }}, {{ car.manufacturer.country }})
-        </li>
-        <hr>
+        <tr>
+          <td>
+            {{ car.id }}
+          </td>
+          <td>
+            {{ car.manufacturer.name }}
+          </td>
+          <td>
+            <a href="{% url 'taxi:car-detail' pk=car.id %}">{{ car.model }}</a>
+          </td>
+          <td>
+            {{ car.manufacturer.country }}
+          </td>
+        </tr>
       {% endfor %}
-    </ul>
+    </table>
+
   {% else %}
     <p>There are no cars in taxi</p>
   {% endif %}
+
 {% endblock %}
