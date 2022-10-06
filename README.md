@@ -5,6 +5,10 @@ Django project to managing taxi service. CRUD functionality with drivers, cars, 
 ## Check it out!
 [Taxi project deployed to Heroku](https://taxi-service-django.herokuapp.com/)
 
+```shell
+login: test_user
+password: test11223344
+```
 
 ## Installation
 
