@@ -25,9 +25,6 @@ python manage.py migrate
 python manage.py runserver #starts Django server
 ```
 
-Here you should say what actually happens when you execute the code above.
-
-
 ## Features
 
 * Authentication functionality (Driver/User)
