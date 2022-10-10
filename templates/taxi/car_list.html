@@ -9,35 +9,42 @@
     </a>
   </h1>
 
-  <form action="" method="get" class="form-inline">
-    {{ search_car_form|crispy }}
-    <input type="submit" value="🔎" class="btn btn-dark">
-  </form>
+  <p>
+    <form action="" method="get" class="form-inline">
+      {{ search_car_form|crispy }}
+      <input type="submit" value="🔎" class="btn btn-outline-info">
+    </form>
+  </p>
 
   {% if car_list %}
-    <table class="table">
-      <tr>
-        <th>ID</th>
-        <th>Manufacturer</th>
-        <th>Model</th>
-        <th>Country</th>
-      </tr>
+    <table class="table table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Manufacturer</th>
+          <th>Model</th>
+          <th>Country</th>
+        </tr>
+      </thead>
 
       {% for car in car_list %}
+        <tbody>
         <tr>
-          <td>
+          <th>
             {{ car.id }}
-          </td>
-          <td>
+          </th>
+          <th>
             {{ car.manufacturer.name }}
-          </td>
-          <td>
+          </th>
+          <th>
             <a href="{% url 'taxi:car-detail' pk=car.id %}">{{ car.model }}</a>
-          </td>
-          <td>
+          </th>
+          <th>
             {{ car.manufacturer.country }}
-          </td>
+          </th>
         </tr>
+
+        </tbody>
       {% endfor %}
     </table>
 

@@ -1,8 +1,37 @@
-body {
-    margin-top: 20px;
-}
-
 .link-to-page {
     float: right;
-    margin: 0 5px 0 5px;
+    margin: 5px 5px 0 5px;
+}
+
+.index .list-group {
+    width: 30rem;
+}
+
+header .navbar-brand {
+    border: 2px solid black;
+    padding-right: 15px;
+}
+
+header .nav-item {
+    text-transform: uppercase;
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+header .nav-item a::after {
+    content: '';
+    width: 100%;
+    display: block;
+    background-color: #ccc;
+    height: 1px;
+    transform: scale(0);
+    transition: all .3s;
+}
+
+header .nav-item a:hover::after {
+    transform: scale(1);
+}
+
+header .logged {
+    text-transform: none;
 }
